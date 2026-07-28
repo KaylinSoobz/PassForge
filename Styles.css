@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#passwordDisplayContainer{
+    display: flex;
+
+}
+
+#copybtn{
+    height: 25px;
+    width: 45px;
+    margin-left: 15px;
+}
+
+#passwordDisplay {
+    border: solid 2px black;
+    width: 250px;
+    height: 25px;
+    margin-bottom: 25px;
+}
