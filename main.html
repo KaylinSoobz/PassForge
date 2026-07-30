@@ -4,18 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles.css">
-    <title>Document</title>
+    <title>PassForge</title>
 </head>
 <body>
-    <h4>PassForge</h4>
-    <div id="passwordDisplayContainer">
-    <label id="passwordDisplay"></label>
-    <button id="copybtn">Copy</button>        
+    <div id="topcontainer">
+        <h1>PassForge</h1>
+        <h3>Free Secure Password Generator</h3>
+        <p>Generate strong, unique passwords instantly with PassForge. Create random or memorable passwords designed to help protect your online accounts and personal information—all for free.</p>
     </div>
-    <div>
-        <button id="normalpassbtn">Generate Password (Normal)</button>
-        <button id="strongpasswordbtn">Generate Password (Strong)</button>
+    <div id="midcontainer">
+        <div id="imagecontainer">
+            <img src="passforge_anvil.png">
+        </div>
+        <div id="passwordcontainer">
+             <section id="passwordDisplayContainer">
+                 <label id="passwordDisplay"></label>
+                <button id="copybtn">Copy</button>        
+             </section>
+             <section id="passwordLenghtContainer">
+                <input type="range">
+                <label id="lenghtDisplay">Lenght</label>
+             </section>
+             <section id="passContentContainer">
+                <section >
+                    <input type="checkbox" id="uppercasechkbox">
+                    <label for="uppercasechkbox">UpperCase Letters</label>                   
+                </section>
+                <section>
+                    <input type="checkbox" id="lowercasechkbox">
+                    <label for="lowercasechkbox">LowerCase Letters</label>                    
+                </section>
+                <section>
+                 <input type="checkbox" id="numberschkbox">
+                <label for="numberschkbox">Numbers</label>                   
+                </section>
+                <section>
+                <input type="checkbox" id="symbolchkbox">
+                <label for="symbolchkbox">Symbols</label>                    
+                </section>
+             </section>
+             <section>
+                 <button id="normalpassbtn">Generate Password (Normal)</button>
+                <button id="strongpasswordbtn">Generate Password (Strong)</button>
+             </section>
+        </div>
     </div>
+    <footer>
+        <label>Made by Kaylin Subramanian</label>
+    </footer>
     <script src="Java.js" defer></script>
 </body>
 </html>

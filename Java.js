@@ -1,6 +1,7 @@
 const normalpassbtn = document.querySelector("#normalpassbtn");
 const passwordDisplay = document.querySelector("#passwordDisplay");
 const strongpasswordbtn = document.querySelector("#strongpasswordbtn");
+const copybtn = document.querySelector("#copybtn");
 const arrayCities = ["UnitedStates","Canada","Mexico","France","Italy","Japan","India","Brazil","Russia","SouthAfrica"];
 
 const arrayarticle = ["","A","The"];
@@ -26,3 +27,7 @@ function createstrongpassword() {
 strongpasswordbtn.addEventListener("click", () => {
 passwordDisplay.textContent = createstrongpassword();
 });
+
+copybtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(passwordDisplay.textContent);
+})
