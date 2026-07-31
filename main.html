@@ -7,11 +7,14 @@
     <title>PassForge</title>
 </head>
 <body>
+    <div id="mainHeading">
+         <h1>PassForge</h1>
+    </div>
     <div id="topcontainer">
-        <h1>PassForge</h1>
-        <h3>Free Secure Password Generator</h3>
+        <h2>Free Secure Password Generator</h2>
         <p>Generate strong, unique passwords instantly with PassForge. Create random or memorable passwords designed to help protect your online accounts and personal information—all for free.</p>
     </div>
+    <div id="spacing"></div>
     <div id="midcontainer">
         <div id="imagecontainer">
             <img src="passforge_anvil.png">
@@ -22,35 +25,36 @@
                 <button id="copybtn">Copy</button>        
              </section>
              <section id="passwordLenghtContainer">
-                <input type="range">
+                <label>Password Lenght : </label>
+                <input type="range" id="passwordLenghtSelector" max="35" min="5">
                 <label id="lenghtDisplay">Lenght</label>
              </section>
              <section id="passContentContainer">
                 <section >
-                    <input type="checkbox" id="uppercasechkbox">
-                    <label for="uppercasechkbox">UpperCase Letters</label>                   
+                    <input type="checkbox" id="uppercasechkbox" class="checkbox">
+                    <label >UpperCase Letters</label>                   
                 </section>
                 <section>
-                    <input type="checkbox" id="lowercasechkbox">
-                    <label for="lowercasechkbox">LowerCase Letters</label>                    
+                    <input type="checkbox" id="lowercasechkbox" class="checkbox">
+                    <label >LowerCase Letters</label>                    
                 </section>
                 <section>
-                 <input type="checkbox" id="numberschkbox">
-                <label for="numberschkbox">Numbers</label>                   
+                 <input type="checkbox" id="numberschkbox" class="checkbox">
+                <label >Numbers</label>                   
                 </section>
                 <section>
-                <input type="checkbox" id="symbolchkbox">
-                <label for="symbolchkbox">Symbols</label>                    
+                <input type="checkbox" id="symbolchkbox" class="checkbox">
+                <label >Symbols</label>                    
                 </section>
              </section>
              <section>
-                 <button id="normalpassbtn">Generate Password (Normal)</button>
-                <button id="strongpasswordbtn">Generate Password (Strong)</button>
+                 <button id="normalpassbtn" class="generatebtn">Generate Password (Memorable)</button>
+                <button id="strongpasswordbtn" class="generatebtn">Generate Password (Random)</button>
              </section>
         </div>
     </div>
     <footer>
-        <label>Made by Kaylin Subramanian</label>
+        <label>&copy; 2026 Kaylin Subramanian</label>
     </footer>
     <script src="Java.js" defer></script>
 </body>

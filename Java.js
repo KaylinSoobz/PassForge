@@ -2,6 +2,8 @@ const normalpassbtn = document.querySelector("#normalpassbtn");
 const passwordDisplay = document.querySelector("#passwordDisplay");
 const strongpasswordbtn = document.querySelector("#strongpasswordbtn");
 const copybtn = document.querySelector("#copybtn");
+const lenghtDisplay = document.querySelector("#lenghtDisplay");
+const passwordLenghtSelector = document.querySelector("#passwordLenghtSelector")
 const arrayCities = ["UnitedStates","Canada","Mexico","France","Italy","Japan","India","Brazil","Russia","SouthAfrica"];
 
 const arrayarticle = ["","A","The"];
@@ -20,6 +22,12 @@ normalpassbtn.addEventListener("click", () => {
 passwordDisplay.textContent = createnormalpassword();
 });
 
+lenghtDisplay.textContent = passwordLenghtSelector.value;
+
+passwordLenghtSelector.addEventListener("input", () => {
+lenghtDisplay.textContent = passwordLenghtSelector.value;
+});
+
 function createstrongpassword() {
     return (arrayarticle[(Math.floor(Math.random() * (2 - 0 + 1)) + 0)] + arraycolors[(Math.floor(Math.random() * (4 - 0 + 1)) + 0)] + arrayobjects[(Math.floor(Math.random() * (4 - 0 + 1)) + 0)] + arraynumbers[(Math.floor(Math.random() * (9 - 0 + 1)) + 0)] + arraysymbols[Math.floor(Math.random() * arraysymbols.length)]);
 };
@@ -30,4 +38,5 @@ passwordDisplay.textContent = createstrongpassword();
 
 copybtn.addEventListener("click", () => {
     navigator.clipboard.writeText(passwordDisplay.textContent);
+    alert("Password Copied !")
 })
