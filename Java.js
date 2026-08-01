@@ -93,6 +93,24 @@ copybtn.addEventListener("click", () => {
 
 function createnormalpassword(){
 let passwordLenght = passwordLenghtSelector.value;
+let password = "";
+
+while (password.length < passwordLenght) {
+    let randomNumber = Math.floor(Math.random()*(299 - 0 + 1)) + 0 ;
+    if ( (password + passwordWords[randomNumber]).length <= passwordLenght ){
+        password = password + passwordWords[randomNumber];
+    } 
+    else 
+    {
+    let randomNumber = Math.floor(Math.random()*(1 - 0 + 1)) + 0 ;
+    if (randomNumber == 0 ){
+        password = password + (numbers[Math.floor(Math.random() * ( 9 - 0 + 1)) + 0])
+    }
+    else
+    password = password + (symbols[Math.floor(Math.random() * ( 30 - 0 + 1)) + 0])
+    }
+}
+return password 
 }
 
 function createstrongpassword(){
@@ -122,9 +140,7 @@ if (randomarray == 3) {
  password = password + symbols[randomNumber];
 }
 }
-
 return password;
-
 };
 
 normalpassbtn.addEventListener("click", () => {
