@@ -7,55 +7,55 @@
     <title>PassForge</title>
 </head>
 <body>
-    <div id="mainHeading">
-         <h1>PassForge</h1>
-    </div>
-    <div id="topcontainer">
-        <h2>Free Secure Password Generator</h2>
-        <p>Generate strong, unique passwords instantly with PassForge. Create random or memorable passwords designed to help protect your online accounts and personal information—all for free.</p>
-    </div>
-    <div id="spacing"></div>
-    <div id="midcontainer">
-        <div id="imagecontainer">
+
+    <header>
+        <h1>PassForge</h1>
+    </header>
+    <main>
+        <section id="description">
+            <h2>Lorem ipsum, dolor sit amet consectetur</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum enim voluptas libero laudantium quaerat eius, voluptates id aspernatur eum illum omnis cumque minus neque laboriosam rem dolorem beatae ut.
+            </p>
+        </section>
+        <div>
             <img src="passforge_anvil.png">
+            <section>
+                <div>
+                     <label id="passwordDisplay"></label>
+                    <button>Copy</button>                    
+                </div>
+                <input type="range">
+                <ul>
+                    <li>
+                        <label for="uppercase">uppercase Letters</label>
+                        <input type="checkbox" id="uppercase">
+                    </li>
+                    <li>
+                        <label for="lowercase">lowercase Letters</label>
+                        <input type="checkbox" id="lowercase">
+                    </li>
+                    <li>
+                        <label for="numbers">Numbers</label>
+                        <input type="checkbox" id="numbers" >
+                    </li>
+                    <li>
+                        <label for="symbols">Symbols</label>
+                        <input type="checkbox" id="symbols">
+                    </li>
+                </ul>
+            </section>
         </div>
-        <div id="passwordcontainer">
-             <section id="passwordDisplayContainer">
-                 <label id="passwordDisplay"></label>
-                <button id="copybtn">Copy</button>        
-             </section>
-             <section id="passwordLenghtContainer">
-                <label>Password Lenght : </label>
-                <input type="range" id="passwordLenghtSelector" max="35" min="5">
-                <label id="lenghtDisplay">Lenght</label>
-             </section>
-             <section id="passContentContainer">
-                <section >
-                    <input type="checkbox" id="uppercasechkbox" class="checkbox">
-                    <label >UpperCase Letters</label>                   
-                </section>
-                <section>
-                    <input type="checkbox" id="lowercasechkbox" class="checkbox">
-                    <label >LowerCase Letters</label>                    
-                </section>
-                <section>
-                 <input type="checkbox" id="numberschkbox" class="checkbox">
-                <label >Numbers</label>                   
-                </section>
-                <section>
-                <input type="checkbox" id="symbolchkbox" class="checkbox">
-                <label >Symbols</label>                    
-                </section>
-             </section>
-             <section>
-                 <button id="normalpassbtn" class="generatebtn">Generate Password (Memorable)</button>
-                <button id="strongpasswordbtn" class="generatebtn">Generate Password (Random)</button>
-             </section>
-        </div>
-    </div>
+    </main>
     <footer>
-        <label>&copy; 2026 Kaylin Subramanian</label>
+        <section>
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo delectus quos ipsam rem aut, error quasi vero dolorem minima laborum labore in beatae ipsa eaque quo a eligendi aliquam consectetur.
+            Eaque non illo natus labore? Modi quae reiciendis libero velit facere voluptatum eius obcaecati odio aspernatur? Doloremque enim dolore, cumque explicabo non iusto assumenda! Dolores provident at commodi sequi quis.</p>
+        </section>
+        <label>&copy; 2026 Kaylin Subramanian </label>
     </footer>
+ 
     <script src="Java.js" defer></script>
     <script src="java_array.js" defer></script>
 </body>

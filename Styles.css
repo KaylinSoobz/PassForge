@@ -1,127 +1,99 @@
 body {
-    margin: 0;
-    font-family: Georgia, serif;
-}
-
-#topcontainer{
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
 }
 
-
-#mainHeading{
-    background-color: #001d3d;
+header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-bottom: solid black 0.1px;
-    padding-bottom: 15px;
-    padding-top: 10px;
 }
 
-h1{
-margin: 0%;
-color: rgb(255, 255, 255);
-}
-
-p {
- font-size: large ;
-}
-
-#midcontainer{
+#description {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-img{
-    width: 650px;
-    height: 650px;
-    margin-right: 35px;
+div {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
 }
 
-#passwordDisplayContainer{
+input[type="range"] {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 75%;
+}
+
+li {
     display: flex;
+    justify-content: space-between;
 }
 
-#copybtn{
-    height: 25px;
-    width: 45px;
-    margin-left: 15px;
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 35rem;
 }
 
 #passwordDisplay {
-    border: solid  0.5px black;
-    border-radius: 30px;
-    width: 250px;
-    height: 25px;
-    margin-bottom: 25px;
-    padding-left: 20px;
-    padding-top: 5px;
-    font-family: Georgia, serif;
+    display: inline-block;
+    border: 1px solid black;
+    width: 235px;
+    height: 12.5px;
+    min-height: auto;
+    padding: 5px;
+    margin-right: 10px;
 }
 
-#passwordLenghtContainer{
-    display: flex;
-    align-items: center;
-}
+@media (width < 825px) {
+    div {
+        flex-direction: column;
+    }
 
-#passwordLenghtSelector{
-    cursor: pointer;
-    accent-color: #003566;
-}
+    main {
+       width: 90%;;
+    }
 
-#passContentContainer{
+    img {
+        width: 90%;
+    }
+
+    button {
+        display: block;
+    }
+
+    section {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    align-items: center;
+     }
 
-footer{
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #001d3d;
-    border-top: solid black 0.1px;
-    color: rgb(255, 255, 255);
-}
-
-input[type="checkbox"] {
-  width: 1.5em;
-  height: 1.5em;
-  cursor: pointer; 
-}
-
-input[type="checkbox"]:hover {
-    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-#copybtn{
-    border: solid 1px ;
-    border-radius: 20px;
-    background-color: #ffd60a ;
-}
-
-#copybtn:hover{
-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
-}
-
-.generatebtn{
-    border: solid 1px ;
-    border-radius: 20px;
-    background-color: #ffd60a ;
-    padding: 5px;
-}
-
-.generatebtn:hover{
-    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+     #passwordDisplay {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 200px;
+     }
 }
