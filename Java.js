@@ -1,3 +1,4 @@
+//Arrays for password character storage 
 const passwordWords = [
     "Eagle","Fox","Moose","Rhino","Leopard","Cheetah","Badger","Wolverine","Puma","Koala",
     "Octopus","Kraken","Griffin","Hydra","Viper","Python","Scorpion","Buffalo","Stag","Hawk",
@@ -84,5 +85,208 @@ const symbols = [
 
 
 
+//Assignment of all HTML components to their respective variables 
+const passwordDisplay = document.querySelector("#passwordDisplay");
+const copyButton = document.querySelector("#copyButton");
+const passwordLenghtSelector = document.querySelector("#passwordLenghtSelector");
+const passwordLenghtDisplay = document.querySelector("#passwordLenghtDisplay");
+const uppercaseCheckbox = document.querySelector("#uppercase");
+const lowercaseCheckbox = document.querySelector("#lowercase");
+const numbersCheckbox = document.querySelector("#numbers");
+const symbolsCheckbox = document.querySelector("#symbols");
+const memorablePasswordCheckbox = document.querySelector("#memorablePasswordCheckbox");
+const regenerateButton = document.querySelector('#regenerateButton');
+
+// random number generation
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+//Normal password generator logic
+function generateNormalPassword() {
+    let password = "";
+    let masterArray = [];
+
+    if (uppercaseCheckbox.checked == true){
+        masterArray.push(uppercaseLetters)
+    };
+    if (lowercaseCheckbox.checked == true){
+        masterArray.push(lowercaseLetters)
+    };
+    if (numbersCheckbox.checked == true){
+        masterArray.push(numbers)
+    };
+    if (symbolsCheckbox.checked == true){
+        masterArray.push(symbols)
+    };
+
+    for (let i = 0 ; i < passwordLenghtSelector.value ; i++){
+        let arraySelector = getRandomInt(0, masterArray.length - 1);
+        let subArraySelector = getRandomInt(0,masterArray[arraySelector].length - 1);
+        password +=  masterArray[arraySelector][subArraySelector];
+    }
+
+    passwordDisplay.textContent = password;
+
+}
 
 
+//Memorable password generator logic 
+function generateMemorablePassword(){
+    let password = {
+        adjective : '',
+        noun : '',
+        number :  '',
+        symbol :  ''
+    }
+
+    password.adjective = passwordWords[getRandomInt(0, 578)];
+    password.noun = passwordWords[getRandomInt(0, 578)];
+    password.number = numbers[getRandomInt(0, 9)];
+    password.symbol = symbols[getRandomInt(0, 30)];
+
+      passwordDisplay.textContent = password.adjective+password.noun+password.number+password.symbol
+
+}
+
+//checkbox selection check
+function checkSelection(){
+    let count = 0;
+
+    if (uppercaseCheckbox.checked == true ){
+        count++
+    };
+    if (lowercaseCheckbox.checked == true ){
+        count++
+    }
+    if (numbersCheckbox.checked == true ){
+        count++
+    }
+    if (symbolsCheckbox.checked == true ){
+        count++
+    }
+
+    return count;
+
+}
+
+
+//Set Default component Behaviour
+uppercaseCheckbox.checked = true;
+lowercaseCheckbox.checked = true;
+numbersCheckbox.checked = true;
+symbolsCheckbox.checked = true;
+memorablePasswordCheckbox.checked = false;
+regenerateButton.disabled = true;
+passwordLenghtSelector.value = 14 ;
+passwordLenghtDisplay.textContent = 14;
+generateNormalPassword();
+
+//copy password function
+function copyTextToClipboard(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      alert('Text successfully copied to clipboard');
+    })
+    .catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+}
+
+
+//event listeners 
+uppercaseCheckbox.addEventListener('change',() => {
+    if(uppercaseCheckbox.checked == true){
+         generateNormalPassword();
+    }
+    else
+    {
+        if(checkSelection() == 0){
+            uppercaseCheckbox.checked = true;
+            generateNormalPassword();
+        }
+        else
+        generateNormalPassword();
+    }
+});
+lowercaseCheckbox.addEventListener('change',() => {
+    if(lowercaseCheckbox.checked == true){
+         generateNormalPassword();
+    }
+    else
+    {
+        if(checkSelection() == 0){
+            lowercaseCheckbox.checked = true;
+            generateNormalPassword();
+        }
+        else
+        generateNormalPassword();
+    }
+});
+numbersCheckbox.addEventListener('change',() => {
+    if(numbersCheckbox.checked == true){
+         generateNormalPassword();
+    }
+    else
+    {
+        if(checkSelection() == 0){
+            numbersCheckbox.checked = true;
+            generateNormalPassword();
+        }
+        else
+        generateNormalPassword();
+    }
+});;
+symbolsCheckbox.addEventListener('change',() => {
+    if(symbolsCheckbox.checked == true){
+         generateNormalPassword();
+    }
+    else
+    {
+        if(checkSelection() == 0){
+            symbolsCheckbox.checked = true;
+            generateNormalPassword();
+        }
+        else
+        generateNormalPassword();
+    }
+});
+memorablePasswordCheckbox.addEventListener('change',() => {
+    if (memorablePasswordCheckbox.checked == true){
+        generateMemorablePassword();
+        uppercaseCheckbox.checked = false;
+        lowercaseCheckbox.checked = false;
+        numbersCheckbox.checked = false;
+        symbolsCheckbox.checked = false;
+        passwordLenghtSelector.disabled = true;
+        uppercaseCheckbox.disabled = true;
+        lowercaseCheckbox.disabled = true;
+        numbersCheckbox.disabled = true;
+        symbolsCheckbox.disabled = true;
+        regenerateButton.disabled = false;
+    }
+    else
+    {
+        uppercaseCheckbox.checked = true;
+        lowercaseCheckbox.checked = true;
+        numbersCheckbox.checked = true;
+        symbolsCheckbox.checked = true;
+        passwordLenghtSelector.disabled = false;
+        uppercaseCheckbox.disabled = false;
+        lowercaseCheckbox.disabled = false;
+        numbersCheckbox.disabled = false;
+        symbolsCheckbox.disabled = false;
+        regenerateButton.disabled = true;
+        generateNormalPassword();
+    }
+});
+passwordLenghtSelector.addEventListener('input',() => {
+    generateNormalPassword();
+    passwordLenghtDisplay.textContent = passwordLenghtSelector.value
+});
+regenerateButton.addEventListener('click',() => {
+    generateMemorablePassword();
+})
+copyButton.addEventListener('click',() => {
+    copyTextToClipboard(passwordDisplay.textContent)
+});

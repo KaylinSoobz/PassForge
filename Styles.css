@@ -83,6 +83,10 @@ img {
     margin-top: 15px;
 }
 
+#regenerateButton {
+    margin-top: 10px;
+}
+
 @media (width < 825px) {
     div {
         flex-direction: column;

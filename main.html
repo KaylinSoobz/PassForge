@@ -23,34 +23,35 @@
             <section>
                 <div>
                      <label id="passwordDisplay"></label>
-                    <button>Copy</button>                    
+                    <button id="copyButton">Copy</button>                    
                 </div>
                 <div id="passwordLenght">
-                    <input type="range" id="passwordLenghtSelector">
-                    <label for="passwordLenghtSelector" id="passwordLenghtDisplay">20</label>
+                    <input type="range" id="passwordLenghtSelector" min="10" max="25">
+                    <label for="passwordLenghtSelector" id="passwordLenghtDisplay">14</label>
                 </div>
                 <ul>
                     <li>
                         <label for="uppercase">uppercase Letters</label>
-                        <input type="checkbox" id="uppercase">
+                        <input type="checkbox" id="uppercase" checked >
                     </li>
                     <li>
                         <label for="lowercase">lowercase Letters</label>
-                        <input type="checkbox" id="lowercase">
+                        <input type="checkbox" id="lowercase" checked>
                     </li>
                     <li>
                         <label for="numbers">Numbers</label>
-                        <input type="checkbox" id="numbers" >
+                        <input type="checkbox" id="numbers" checked>
                     </li>
                     <li>
                         <label for="symbols">Symbols</label>
-                        <input type="checkbox" id="symbols">
+                        <input type="checkbox" id="symbols" checked>
                     </li>
                 </ul>
                 <div id="memorablePsswordOption">
-                        <label for="symbols">Generate Memorable Password</label>
-                        <input type="checkbox" id="symbols">   
+                        <label for="memorablePasswordCheckbox">Generate Memorable Password</label>
+                        <input type="checkbox" id="memorablePasswordCheckbox">   
                 </div>
+                <button id="regenerateButton">Regenerate</button>
             </section>
         </div>
     </main>
