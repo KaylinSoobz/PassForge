@@ -1,13 +1,27 @@
 body {
+    font-family: 'Trebuchet MS', sans-serif;
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0%;
 }
 
 header {
     display: flex;
+    width: 100%;
     justify-content: center;
+    background-color: #ff820e;
+    border-top:  solid 2px black;;
+}
+
+main {
+    width: 100%;
+}
+
+main > div {
+    background-color: #ff8410
 }
 
 #description {
@@ -59,6 +73,15 @@ img {
     width: 35rem;
 }
 
+input[type="checkbox"] {
+  accent-color : #fca311 ; 
+  outline: solid 1px black;
+}
+
+input[type="range"] {
+  accent-color : #fca311 ; 
+}
+
 #passwordDisplay {
     display: inline-block;
     border: 1px solid black;
@@ -67,6 +90,8 @@ img {
     min-height: auto;
     padding: 5px;
     margin-right: 10px;
+    background-color: white;
+    padding: 6.5px;
 }
 
 #passwordLenght {
@@ -83,17 +108,37 @@ img {
     margin-top: 15px;
 }
 
+#copyright {
+    background-color: #ff820e;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px black;
+}
+
+#description , #aboutSection {
+    background-color: #e2360b;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px black;
+}
+
+button {
+    background-color: #fca311;
+    border: solid 1px black;
+    margin: 5px;
+}
+
+
 #regenerateButton {
     margin-top: 10px;
 }
 
+
+
 @media (width < 825px) {
     div {
         flex-direction: column;
-    }
-
-    main {
-       width: 90%;;
     }
 
     img {
